@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+
+<HTML>
+  <head>
+    <title>Reddit Client</title>
+    <script src = "js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src = "js/redditWrapper.js" type="text/javascript"></script>
+    <script src = "js/webview.js" type="text/javascript"></script>
+
+  </head>
+
+  <body>
+
+    <iframe id="iframe" src="https://www.reddit.com/api/v1/authorize?client_id=kJ6d7NEumpV4iQ&response_type=token&state=asdjkele&redirect_uri=http://127.0.0.1:3000/users/auth/reddit/callback&scope=identity,edit,mysubreddits,vote" mozbrowser remote></iframe>
+    <div id="json">
+    </div>
+  </body>
+
+  </html>

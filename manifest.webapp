@@ -1,0 +1,20 @@
+{
+  "name": "RedFox",
+  "description": "Simple Reddit Client",
+  "launch_path": "/redfox.html",
+  "icons": {
+    "512": "/img/icon-512.png",
+    "128": "/img/icon-128.png"
+  },
+  "developer": {
+    "name": "PaperBound",
+    "url": "www.github.com/paperbound"
+  },
+  "type": "privileged",
+  "permissions": {
+    "browser":{},
+    "device-storage:videos":{ "access": "readwrite" },
+    "device-storage:pictures":{ "access": "readwrite" }
+  },
+  "default_locale": "en"
+}
