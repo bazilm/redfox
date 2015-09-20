@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<title>Reddit</title>
+		<link href="css/styles.css" rel="stylesheet">
+		<link href="css/desktop.css" rel="stylesheet"/>
+<script src="js/jquery-1.11.1.min.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+$(document).ready(function(){
+	$(window).scroll(function (event) {
+		var scroll = $(window).scrollTop();
+		var height = $(document).height();
+		var size = $(window).height();
+		if (processing)
+			return false;
+		if (height - scroll < 2*size){
+			processing = true;
+			octopus.getArticles();
+		}
+    });
+	$("body").click(function(){
+		$("#search-results").html("");
+	});
+	$("input").keyup(function(){
+		if($("#autocomplete").val().length > 1){
+			articleView.renderSearch($("#autocomplete").val());
+		}
+		else{
+			$("#search-results").html("");
+		}
+	});
+ });
+$("body").click(function(e){
+	$("#search-results").html("");
+	});
+						/*
+						var article_height = article_heading.height();
+						var image_height = article_image.height();
+						var snippet_height = article_snippet.height();
+						if(snippet_height > image_height){image_height = snippet_height;}
+						console.log(image_height+" "+article_height+" "+snippet_height);
+						article.height(image_height+article_height+60);
+						*/
+</script>
+	</head>
+	<body>
+<div class="page-container">
+  
+	<!-- top navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+       <div class="container">
+    	<div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand" id="current-page" href="#">Reddit</a>
+    	</div>
+		   <ul class="nav navbar-nav navbar-right" id="by-info">
+				<li><a href="#"><span class="glyphicon"></span>By Optokris.com</a></li>
+			</ul>
+       </div>
+    </div>
+      
+    <div class="container">
+      <div class="row row-offcanvas row-offcanvas-left">
+		<!-- sidebar -->
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+            <ul class="nav navbar-nav" id="sidebar-nav">
+				<li class="dropdown" id="home">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Home<span class="caret"></span></a>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">A - C <span class="caret"></span></a>
+					<ul class="dropdown-menu nav navbar-nav" id="a-c">
+						
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">D - H <span class="caret"></span></a>
+					<ul class="dropdown-menu nav navbar-nav" id="d-h">
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">I - P <span class="caret"></span></a>
+					<ul class="dropdown-menu nav navbar-nav" id="i-p">
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Q - Z <span class="caret"></span></a>
+					<ul class="dropdown-menu nav navbar-nav" id="q-z">
+					</ul>
+				</li>
+		    </ul>
+        </div>
+  	
+        <!-- main area -->
+        <div class="col-xs-12 col-sm-9">
+				<div id="articles">			
+				
+				
+				</div>
+				<div id="loading">
+					<img src="images/loading.gif" id="img">
+					<div id="loading_error"></div>
+				</div>
+         </div><!-- /.col-xs-12 main -->
+    </div><!--/.row-->
+  </div><!--/.container-->
+</div><!--/.page-container-->
+
+
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/scripts.js"></script>
+		<script src="js/model.js"></script>
+
+<!-- child of the body tag -->
+<span id="top-link-block" class="hidden">
+    <a href="#top" class="well well-sm" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+        <i class="glyphicon glyphicon-chevron-up"></i> Back to Top
+    </a>
+</span><!-- /top-link-block -->
+<script>
+// Only enable if the document has a long scroll bar
+// Note the window height + offset
+if ( 1 ) {
+    $('#top-link-block').removeClass('hidden').affix({
+        // how far to scroll down before link "slides" into view
+        offset: {top:100}
+    });
+}
+</script>
+	</body>
+</html>
